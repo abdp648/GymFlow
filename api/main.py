@@ -1,6 +1,6 @@
 from typing import Optional
-
 from fastapi import FastAPI
+
 
 app = FastAPI()
 
@@ -10,17 +10,10 @@ async def root():
     return {"message": "Hello World"}
 
 @app.get("/bmi")
-def calculate_bmi(weight: float, height: float):
-    """
-    Calculate Body Mass Index (BMI)
-    Weight in kilograms
-    Height in meters
-    """
+def calculate_bmi(weight: float, height: float):    
     if height <= 0:
         return {"error": "Height must be greater than 0"}
-    
     bmi = weight / (height ** 2)
-    
     category = ""
     if bmi < 18.5:
         category = "Underweight"
