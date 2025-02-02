@@ -3,6 +3,6 @@ from typing import Optional
 
 app = FastAPI()
 
-@app.get()
+@app.get("/")
 async def greet():
     return "hello bro , vercel is the best one in my life"
