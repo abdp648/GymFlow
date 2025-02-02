@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
-from starlette.middleware.cors import CORSMiddleware
-import pymongo
+from pymongo import MongoClient
+import os
 
 myclient = pymongo.MongoClient('mongodb+srv://abdoeisaebrahim2011:abdoeisa2011@cluster0.9yxwg.mongodb.net/')
 db = myclient['GymFlow']
