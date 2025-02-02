@@ -7,8 +7,9 @@ db = myclient['GymFlow']
 col = db['Exercises']
 
 app = FastAPI()
-
-
+@app.get("/")
+def greet():
+    return "Hello bro it's working"
 @app.post("/calculate_bmi")
 def calculate_bmi(weight: float, height: float, age: int, gender: str):
     bmi = weight / (height ** 2)
