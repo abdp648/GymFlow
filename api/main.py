@@ -20,6 +20,8 @@ col3 = db["Accounts"]
 def greet():
     return {"message": "Hello bro, it's working!"}
 
+#here is bmi bro
+
 @app.get("/calculate_bmi")
 def calculate_bmi(weight: float, height: float, age: int, gender: str):
     bmi = weight / (height ** 2)
@@ -36,6 +38,8 @@ def calculate_bmi(weight: float, height: float, age: int, gender: str):
     }
     return result
 
+#here is excersizes
+
 @app.get("/find_exercise")
 def find_exercise(name: str):
     query = {"Name": name}
@@ -49,6 +53,8 @@ def get_cards():
     
     return list(result)
 
+#abdo, here is the food
+
 @app.get("/get_FoodCards")
 def get_FoodCards():
     result = col2.find({}, {"_id": 0, "name": 1, "calories": 1})  
@@ -61,6 +67,8 @@ def find_Food(name: str):
     results = col2.find(query, {"_id": 0})
     
     return list(results)
+
+# accounts is here, abdo 
 
 @app.get("/add_acc")
 def add_acc(user: str, password: Union[str, int]):
