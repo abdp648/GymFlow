@@ -55,6 +55,6 @@ def get_FoodCards():
 @app.get("/find_food")
 def find_Food(name: str):
     query = {"name": name}
-    results = col.find(query, {"_id": 0})
+    results = col2.find(query, {"_id": 0})
     
     return list(results)
