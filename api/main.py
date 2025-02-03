@@ -4,12 +4,10 @@ import os
 
 app = FastAPI()
 
-# Load MongoDB URI from environment variables
 MONGO_URI = os.getenv("MONGO_URI")
 if not MONGO_URI:
     raise ValueError("MONGO_URI is not set! Add it in Vercel environment variables.")
 
-# Connect to MongoDB
 client = MongoClient(MONGO_URI)
 db = client["GymFlow"]
 col = db["Exercises"]
@@ -18,7 +16,7 @@ col = db["Exercises"]
 def greet():
     return {"message": "Hello bro, it's working!"}
 
-@app.post("/calculate_bmi")
+@app.get("/calculate_bmi")
 def calculate_bmi(weight: float, height: float, age: int, gender: str):
     bmi = weight / (height ** 2)
 
