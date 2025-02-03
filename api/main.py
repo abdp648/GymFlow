@@ -26,11 +26,11 @@ def calculate_bmi(weight: float, height: float, age: int, gender: str):
         body_fat = (1.20 * bmi) + (0.23 * age) - 5.4
     else:
         return {"error": "Invalid gender, please enter 'male' or 'female'"}
-    
-    return {
+    result = {
         "bmi": round(bmi, 2),
         "body_fat_percentage": round(body_fat, 2)
     }
+    return result
 
 @app.get("/find_exercise")
 def find_exercise(name: str):
