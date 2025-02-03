@@ -43,9 +43,18 @@ def find_exercise(name: str):
 @app.get("/get_cards")
 def get_cards():
     result = col.find({}, {"_id": 0, "Title": 1, "Muscle": 1})  
+    
     return list(result)
 
 @app.get("/get_FoodCards")
-def get_cards():
+def get_FoodCards():
     result = col2.find({}, {"_id": 0, "name": 1, "calories": 1})  
+    
     return list(result)
+
+@app.get("/find_food")
+def find_Food(name: str):
+    query = {"name": name}
+    results = col2.find(query, {"_id": 0})
+    
+    return list(results)
