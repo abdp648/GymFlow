@@ -120,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         getValue: () => _gender,
         getDisplayValue: () => _gender.isNotEmpty ? _gender.capitalize() : 'Not set',
         type: ProfileFieldType.selection,
-        options: ['Male', 'Female', 'Other'],
+        options: ['Male', 'Female'],
       ),
       ProfileField(
         key: 'ActivityLevel',
@@ -129,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         getValue: () => _activityLevel,
         getDisplayValue: () => _activityLevel.isNotEmpty ? _activityLevel : 'Not set',
         type: ProfileFieldType.selection,
-        options: ['Low', 'Moderate', 'High', 'Very High'],
+        options: ['Low', 'Moderate', 'High'],
       ),
       ProfileField(
         key: 'Goal',
@@ -138,7 +138,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         getValue: () => _goal,
         getDisplayValue: () => _goal.isNotEmpty ? _goal : 'Not set',
         type: ProfileFieldType.selection,
-        options: ['Maintain Weight', 'Lose Weight', 'Gain Weight', 'Build Muscle'],
+        options: ['Maintain Weight', 'Lose Weight', 'Gain Weight'],
       ),
     ];
   }
